@@ -10,21 +10,16 @@ body {
   background:var(--bg); 
   color:var(--white);
   font-family: 'DotGothic16', ui-monospace, Menlo, Consolas, monospace;
-  cursor: url("shinchan heart.png") 16 16, auto;
 }
-body.playing { 
-  cursor: url("shinchan ass.png") 16 16, pointer; 
-}
-
 /* === HEADER / TITLE === */
 header {
-  text-align:center;          /* center title + subtitle */
+  text-align:center;          /* center title + subtitle //
   padding:24px 16px; 
   border-bottom:1px solid #161616;
 }
 h1 { 
   margin:0; 
-  font-size:35px;             /* make bigger */
+  font-size:35px;             /* make bigger //
   color: var(--pink);
   letter-spacing:1px;
 }
