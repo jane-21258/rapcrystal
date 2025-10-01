@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rap Mood Crystal — 日本ラップ クリスタル</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
+  <!-- p5.js for the visualizer -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>ランダム　ラップ </h1>
+  　 <p class="sub">japanese rap generator</p>
+   
+    <div id="controls">
+      <select id="moodSelect" aria-label="気分を選ぶ">
+        <option value="">気分を選択…  Pick a mood…</option>
+        <option value="friends">友だちと遊びたい  Hang with friends</option>
+        <option value="getting ready">準備中  Getting ready</option>
+        <option value="making money">稼ぐ  Making money</option>
+        <option value="drink">飲みたい  Want to drink</option>
+        <option value="cheating">浮気したい  Want to cheat</option>
+        <option value="crying over partner">恋人で泣く  Crying over partner</option>
+        <option value="tired of being broke">お金ない  Tired of being broke</option>
+        <option value="hustle">がんばる  Hustle</option>
+        <option value="party">パーティー  Party</option>
+        <option value="study">勉強 チル  Study / Chill</option>
+        <option value="late night">深夜ドライブ  Late night drive</option>
+      </select>
+
+      <input id="moodInput" placeholder="自由入力: 例）お金ない  飲みたい（optional free text）" />
+      <button id="suggestBtn">曲を出す  Suggest</button>
+
+      <button id="playPause">▶︎ 再生  Play</button>
+      <label class="vol">音量  Volume
+        <input id="volume" type="range" min="0" max="1" step="0.01" value="0.8" />
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <div id="ballWrap">
+      <div id="glow"></div>
+      <div id="ring"></div>
+      <div id="canvasHost"></div>
+    </div>
+   
+    <section id="nowPlaying" aria-live="polite"></section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
