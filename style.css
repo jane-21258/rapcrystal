@@ -1,0 +1,132 @@
+:root { 
+  --pink:#ff2db3; 
+  --bg:#000; 
+  --white:#f1f1f1; 
+}
+* { box-sizing:border-box; }
+html, body { height:100%; }
+body {
+  margin:0; 
+  background:var(--bg); 
+  color:var(--white);
+  font-family: 'DotGothic16', ui-monospace, Menlo, Consolas, monospace;
+  cursor: url("shinchan heart.png") 16 16, auto;
+}
+body.playing { 
+  cursor: url("shinchan ass.png") 16 16, pointer; 
+}
+
+/* === HEADER / TITLE === */
+header {
+  text-align:center;          /* center title + subtitle */
+  padding:24px 16px; 
+  border-bottom:1px solid #161616;
+}
+h1 { 
+  margin:0; 
+  font-size:35px;             /* make bigger */
+  color: var(--pink);
+  letter-spacing:1px;
+}
+.sub { 
+  margin:10px 0 20px; 
+  opacity:.9; 
+  font-size:14px; 
+  color:#e2e2e2; 
+}
+
+/* === CONTROLS === */
+#controls { 
+  display:flex; 
+  justify-content:center; 
+  flex-wrap:wrap; 
+  gap:12px; 
+  align-items:center; 
+}
+#controls select, 
+#controls input[type="text"], 
+#controls input[type="search"] {
+  background:#0c0c0c; 
+  color:var(--white); 
+  border:1px solid #1f1f1f;
+  padding:10px 14px; 
+  border-radius:10px;
+  font-size:14px;
+}
+#controls select option {
+  background:#0c0c0c; 
+  color:var(--white);
+}
+#controls #moodInput { min-width:260px; }
+#controls button {
+  background:var(--pink); 
+  color:#000; 
+  border:none; 
+  border-radius:10px;
+  padding:10px 14px; 
+  font-weight:800; 
+  cursor:pointer;
+  box-shadow:0 0 12px rgba(255,45,179,.25);
+}
+#controls .vol { 
+  display:flex; 
+  align-items:center; 
+  gap:6px; 
+  color: var(--pink)
+  font-size:12px; 
+  opacity:.95; 
+}
+#controls input[type="range"] { width:140px; }
+
+/* === CRYSTAL BALL WRAP === */
+main { display:grid; place-items:center; padding:18px; }
+#ballWrap {
+  position:relative;
+  width:min(78vmin, 800px);
+  aspect-ratio:1/1;
+  border-radius:50%;
+  display:grid; 
+  place-items:center;
+}
+#glow {
+  position:absolute; inset:-6vmin;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(255,45,179,.28), transparent 55%),
+    radial-gradient(circle at 45% 65%, rgba(255,45,179,.18), transparent 70%);
+  filter: blur(36px);
+  border-radius:50%;
+  pointer-events:none;
+}
+#ring {
+  position:absolute; inset:0;
+  border-radius:50%;
+  border:3px solid var(--pink);
+  box-shadow:0 0 28px rgba(255,45,179,.35) inset, 0 0 22px rgba(255,45,179,.36);
+  pointer-events:none;
+}
+#canvasHost {
+  position:relative; 
+  width:90%; 
+  aspect-ratio:1/1; 
+  border-radius:50%;
+  overflow:hidden;
+  background: radial-gradient(ellipse at 50% 60%, #130612, #000 70%);
+  border:1px solid #3a0b2f;
+  box-shadow: inset 0 0 70px rgba(255,45,179,.22);
+}
+
+#nowPlaying{
+  position:fixed;
+  left:16px;
+  top:50%;
+  transform:translateY(-50%);
+  width:min(28ch, 34vw);
+  line-height:1.5;
+  font-size:15px;
+  text-align:left;
+  z-index:10;
+  pointer-events:auto;
+}
+#nowPlaying .label{ opacity:.75; font-size:12px; }
+#nowPlaying .title{ color:#ff2db3; font-weight:800; }
+#nowPlaying a{ color:#ff2db3; text-decoration:underline; }
